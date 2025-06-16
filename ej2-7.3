@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace asd_7._3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n;
+            int contador = 0, acumulador = 0;
+            bool continuar;
+            string respuesta;
+            double promedio;
+
+            Console.WriteLine("Ingrese un número entre 0 y 100");
+            n = Convert.ToInt32(Console.ReadLine());
+            if (n >= 0 && n <= 100)
+            {
+                acumulador = acumulador + n;
+                contador++;
+                do
+                {
+                    Console.WriteLine("Desea volver a ingrear otro número? s/n");
+                    respuesta = Console.ReadLine().ToLower();
+                    if (respuesta == "s")
+                    {
+                        Console.WriteLine("Ingrese un número");
+                        n = Convert.ToInt32(Console.ReadLine());
+                        if (n >= 0 && n <= 100)
+                        {
+                            acumulador = acumulador + n;
+                            contador++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Número inválido, ingrese un número entre 0 y 100");
+                        }
+
+                    }
+                    else
+                    {
+                        promedio = acumulador / contador;
+                        Console.WriteLine($"Se ingresaron un total de {contador} números, y su promedio es igual a {promedio}");
+                        continuar = false;
+                    }
+
+                } while (continuar = true);
+            }
+            else
+            {
+                Console.WriteLine("Porfavor ingrese un número válido entre 0 y 100");
+            }
+
+                
+
+
+
+        }
+    }
+}
